@@ -1,0 +1,5 @@
+INDEX VERSION 1.4+C:\Users\55839\Downloads\PROJETO_TDIG\backend\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3077450702.index
+2216227971.index
+4291189714.index
+4066292290.index

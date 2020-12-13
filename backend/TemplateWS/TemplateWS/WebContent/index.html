@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <script>
+        console.log(axios);
+			
+		axios.get('http://localhost:8080/TemplateWS/rest/ws/alunos/JSON')
+            .then(function(response) {
+                // handle success
+                console.log(response);
+            })
+			
+		axios.get('http://localhost:8080/TemplateWS/rest/ws/projetos/JSON')
+            .then(function(response) {
+                // handle success
+                console.log(response);
+            })
+			
+		axios.get('http://localhost:8080/TemplateWS/rest/ws/professores/JSON')
+            .then(function(response) {
+                // handle success
+                console.log(response);
+            })
+			
+		axios.get('http://localhost:8080/TemplateWS/rest/ws/enderecos/JSON')
+            .then(function(response) {
+                // handle success
+                console.log(response);
+            })
+		
+		/*
+		axios.put('http://localhost:8080/TemplateWS/rest/ws/cadastraEndereco', {
+                "id": 3,
+                "rua": "Rua CORS",
+                "numero": "510",
+                "cep": "58415-470",
+                "cidade": "Campina Grande",
+                "estado": "PB",
+                "pais": "Brasil"
+            })
+            .then(res => {
+                // handle success
+                console.log(res.data);
+            })
+		*/
+		
+
+    </script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</body>
+
+</html>
