@@ -210,6 +210,17 @@ public class ManagerService {
 	@Path("/cadastraProjeto")
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response CadastrarProjeto(Projeto projetoEntrada){
+		
+		int alunoId = projetoEntrada.getIdAlunoParticipante();
+		int professorId = projetoEntrada.getIdProfessorResponsavel();
+		
+		Aluno aluno = gerenciadorAlunos.getAlunoById(alunoId);
+		Professor professor = gerenciadorProfessor.getProfessorById(professorId);
+		
+		if(aluno == null || professor == null) {
+			String result = "Aluno ou professor não registrado!";
+			return Response.status(404).entity(result).build();
+		}
 		gerenciadorProjeto.cadastraProjeto(projetoEntrada);
 		String result = "Projeto" + projetoEntrada.getTituloProjeto() + "e resumo" + projetoEntrada.getResumo() + "foi cadastrado com sucesso";
 		return Response.status(201).entity(result).build();

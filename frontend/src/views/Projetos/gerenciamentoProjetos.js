@@ -66,8 +66,12 @@ const GerenciamentoProjetos = props => {
           "idAlunoParticipante": newData.idAlunoParticipante
         })
         .then(function(response){
-          console.log('salvo com sucesso')
-        });
+          console.log('salvo com sucesso');
+          setData([...data, newData]);
+        })
+        .catch(function(error) {
+          alert("Aluno ou professor não registrado!")
+        })
     }
 
     function handleDel(newData) {
@@ -107,7 +111,7 @@ const GerenciamentoProjetos = props => {
             new Promise((resolve, reject) => {
               setTimeout(() => {
                 handleCreate(newData);
-                setData([...data, newData]);
+                
                 
                 resolve();
               }, 1000)
